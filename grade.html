@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="result()">Check</button>
+
+    <table border="1" width="68%">
+        <thead>
+            <tr>
+                <th>S/n</th>
+                <th>Score</th>
+                <th>Mark</th>
+                <th>Point</th>
+                <th>Grade</th>
+                <th>Report</th>
+            </tr>
+            <tbody id="nope">
+                <tr>
+                    <td id="s/n1">1</td>
+                    <td>
+                        <input type="text" id="Score" placeholder="score">
+                    </td>
+                    <td id="Mark"></td>
+                    <td id="point"></td>
+                    <td id="Grade"></td>
+                    <td id="Report"></td>
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+
+    <script>
+        let Score = document.getElementById('Score')
+        // table
+        let  Mark = document.getElementById('Mark')
+        let  Point = document.getElementById('point')
+
+        let Grade = document.getElementById('Grade')
+        let Report = document.getElementById('Report')
+
+        function result() {
+
+            if(Score.value >= 70 && Score.value <= 100 ){
+                alert('Wow! You have EXCELLENT Pass Mark')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '5.00'
+                Grade.innerHTML = 'A'
+                Report.innerHTML = 'Excellent'
+            }
+
+            else if(Score.value >=65 && Score.value <= 69 ){
+                alert('Wow! You have V.GOOD Pass Mark')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '4.0'
+                Grade.innerHTML = 'B'
+                Report.innerHTML = 'Very GOOD'
+            }
+
+            else if(Score.value >=60 && Score.value <= 64 ){
+                alert('Wow! You have GOOD Pass Mark')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '3.0'
+                Grade.innerHTML = 'C'
+                Report.innerHTML = 'Good'
+            }
+
+            else if(Score.value >=55 && Score.value <= 59 ){
+                alert('You have AVERAGE Pass Mark')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '2.0'
+                Grade.innerHTML = 'D'
+                Report.innerHTML = 'Average'
+            }
+
+            else if(Score.value >=50 && Score.value <= 54 ){
+                alert('You have AVERAGE Pass Mark')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '1.0'
+                Grade.innerHTML = 'E'
+                Report.innerHTML = 'Pass'
+            }
+
+            else{
+                alert('Ooops! You have faild')
+                Mark.innerHTML = Score.value
+                Point.innerHTML = '0.0'
+                Grade.innerHTML = 'F'
+                Report.innerHTML = 'Failed'
+            }
+            Score.value = ''           
+        }
+    </script>
+</body>
+</html>

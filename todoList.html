@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="fesi" onclick="time()"></h1>
+    <input type="text" id="list">
+    <p id="memo"></p>
+    <button type="button" onclick="todo()">Check</button>
+
+
+    
+
+    <script>
+        let lister = document.getElementById('list')
+        let memo = document.getElementById('memo')
+        // time
+        let fesi = document.getElementById('fesi')
+
+        function time(){
+            var day = new Date()
+            var hour = day.getHours()
+            var min = day.getMinutes()
+            var sec = day.getSeconds()
+            var status = 'AM'
+
+            hour = hour
+            hour % 12
+
+            if (hour == 0) {
+                hour = 12
+                status = 'AM'   
+            }
+ 
+            if (hour < 11) {
+                hour = hour-11;  
+                status='PM'
+                
+            }
+
+            if (hour < 10) {
+                hour = '0' + hour   
+            }
+
+            if (min < 10) {
+                min = '0' + min
+            }
+            if (sec < 10) {
+                sec = '0' + sec
+                
+            }
+
+
+            setInterval(time,1000)
+
+            fesi.innerHTML = hour + ':' +  min + ':' + sec + ':' + status
+
+            console.log(status);
+        }time()
+        
+        var duplicate = false
+        function todo() {
+            if (lister.value == '' ) {
+               alert('the field is empty')
+            }
+
+            else{
+                memo.innerHTML += lister.value + '<br>'
+            }
+            
+            if (lister.value == memo.innerHTML) {
+               alert('duplicate entry detected')
+                    
+            }
+
+            else{
+                duplicate = true
+            }
+           
+
+            lister.value = ''
+        }
+        
+        
+       
+
+    </script>
+</body>
+</html>

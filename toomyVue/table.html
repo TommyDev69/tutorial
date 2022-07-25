@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="s/n" placeholder="numbering">
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="status" placeholder="status">
+    <input type="text" id="school" placeholder="school">
+    <input type="text" id="classing" placeholder="class">
+    <button type="button" onclick="table()">Check</button>
+
+    <table border="1" width="68%">
+        <thead>
+            <tr>
+                <th>s/n</th>
+                <th>Name</th>
+                <th>status</th>
+                <th>school</th>
+                <th>class</th>
+            </tr>
+            <tbody id="nope">
+                <tr>
+                    <td id="s/n1"></td>
+                    <td id="name1"></td>
+                    <td id="status1"></td>
+                    <td id="school1"></td>
+                    <td id="classing1"></td>
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+
+    <script>
+        var dup = false
+
+
+        function table() {
+            var numbering = document.getElementById('s/n')
+            var name = document.getElementById('name')
+            var status = document.getElementById('status')
+            var  school = document.getElementById('school')
+            var classing = document.getElementById('classing')
+
+
+            var numbering1 = document.getElementById('s/n1')
+            var name1 = document.getElementById('name1')
+            var status1 = document.getElementById('status1')
+            var  school1 = document.getElementById('school1')
+            var classing1 = document.getElementById('classing1')
+
+            var nope = document.getElementById('nope')
+
+            if (numbering.value == '' || name.value == '' || status.value == '' || school.value == '' || classing.value == '') {
+                alert('field must not be empty')
+                nope.innerHTML = 'field must not be empty'   
+            }
+
+            if (numbering.value == '') {
+                numbering1.innerHTML = 'field must not be empty'  
+                console.log(numbering1.innerHTML);
+            }
+            else{
+                numbering1.innerHTML += numbering.value +'<br>'  
+            }    
+            
+            if (name.value != '') {
+                name1.innerHTML = name.value +'<br>'
+                
+            }
+            else{
+                
+                name1.innerHTML =  'field must not be empty'     
+                console.log(name1.value);
+            }
+
+            if (status.value == '') {
+                status1.innerHTML = 'field must not be empty'
+                console.log(status1.innerHTML);
+
+            }
+            else{
+                status1.innerHTML += status.value + '<br>'
+                console.log(status1.innerHTML);
+            }
+
+            if (school.value == '') {
+                school1.innerHTML = 'field must not be empty' 
+            }
+
+            else{
+                school1.innerHTML += school.value +'<br>'
+            }
+
+            
+            if (classing.value == '') {
+                classing1.innerHTML = 'field must not be empty' 
+            }
+
+            else{
+                classing1.innerHTML += classing.value +'<br>'
+            }
+        }
+    </script>
+</body>
+</html>
